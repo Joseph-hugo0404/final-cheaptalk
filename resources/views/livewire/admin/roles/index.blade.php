@@ -1,15 +1,17 @@
 <div>
     <div class="container mt-2">
-        <h1 style="font-weight: 400; font-size:25px;">Roles</h1>
+        <h1 style="font-weight: 400; font-size:25px;">Roles [{{Auth::user()->name}}]</h1>
+        <hr>
         @include('livewire.modals.admin-modal')
         @if (session('message'))
             <div class="alert alert-success text-black text-center" id="messagee">{{ session('message') }}</div>
         @endif
         <div class='btn btn-primary btn-sm float-end mb-2' data-toggle="modal" data-target="#modal-roles">Create New Role</div>
         <input type="search" class="form-control float-start mx-2 mb-3" style="width: 250px;" placeholder="Search" wire:model.lazy="search">
+        <div class="card">
         <div class="card-body">
-            <table class="table table-striped shadow-lg text-center">
-                <thead style="background-color: red; color:white;">
+            <table class="table table-striped shadow-sm text-center">
+                <thead style="background-color: rgb(1, 0, 27); color:white;">
                     <tr>
                         <th>Role</th>
                         <th>Action</th>
@@ -33,6 +35,7 @@
                 </tbody>
             </table>
         </div>
+    </div>
         <div>
             {{ $roles->links() }}
         </div>

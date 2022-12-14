@@ -1,14 +1,16 @@
 <div>
     <div class="container mt-2">
-        <h1 style="font-size: 25px; font-weight: 400;">Users</h1>
+        <h1 style="font-size: 25px; font-weight: 400;">Users [{{Auth::user()->name}}]</h1>
+        <hr>
         @include('livewire.modals.admin-modal')
         @if (session('message'))
             <div class="alert alert-success text-black text-center" id="messagee">{{ session('message') }}</div>
         @endif
         <input type="search" class="form-control float-start mx-2 mb-3" style="width: 250px;" placeholder="Search" wire:model.lazy="search">
+        <div class="card">
         <div class="card-body">
-            <table class="table table-striped shadow text-center">
-                <thead style="background-color: red; color:white;">
+            <table class="table table-striped text-center">
+                <thead style="background-color: rgb(12, 0, 39); color:white;">
                     <tr>
                         <th>Name</th>
                         <th>Email</th>
@@ -35,6 +37,7 @@
                     @endif
                 </tbody>
             </table>
+        </div>
         </div>
         <div>
             {{ $users->links() }}

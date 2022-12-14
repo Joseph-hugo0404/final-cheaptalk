@@ -1,4 +1,4 @@
-@extends('base')
+@extends('main2')
 
 @section('content')
 
@@ -7,8 +7,8 @@
     <div class="container col-sm-4 offset-sm-4">
        
         <div class="card shadow mb-5 mt-5 border border-light rounded">
-            <div class="card-body" style="background-color: #2c70b1;" id="card-bodyy">
-                <h2 class='text-center mt-2 mb-4 ' style="color:white; font-size: 25px;">REGISTER</h2>
+            <div class="card-body" style="background-color: #04011f;" id="card-bodyy">
+                <h2 class='text-center mt-2 mb-4 ' style="color:rgb(255, 60, 0); font-size: 25px;">REGISTER</h2>
                 <form action="{{ '/register' }}" method="POST">
                     {{ csrf_field() }}
 
@@ -50,8 +50,7 @@
                             <p class="text-danger" id="messagee">{{ $message }}</p>
                         @enderror
                     </div>
-                    <div class="form-group mb-3 mt-1 d-flex justify-content-end">
-                        <select name="gender" id="">
+                        <select class="form-control col-sm-9" name="gender" aria-label="Default select example" style="margin-left: 12%;">
                             <option hidden="true">Gender</option>
                             <option selected disabled>Gender</option>
                             <option value="Male">Male</option>
@@ -60,7 +59,6 @@
                         @error('gender')
                             <p class="text-danger" id="messagee">{{ $message }}</p>
                         @enderror
-                    </div>
                     <div class="d-flex mt-4">
                         <div class="flex-grow-1">
                             <a href="{{ '/' }}" class="text-light">Already have an account</a>

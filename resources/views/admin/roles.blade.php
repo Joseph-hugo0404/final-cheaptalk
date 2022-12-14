@@ -1,6 +1,5 @@
-@extends('base')
+@extends('main')
 
-@extends('navbar')
 
 @section('title', 'Admin | Roles')
 

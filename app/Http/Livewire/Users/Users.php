@@ -10,7 +10,7 @@ class Users extends Component
     public function show()
     {
         $users = User::whereNOTNULL('email_verified_at')->get();
-        $usersNull = User::whereNULL('email_verified_at')->get();
+        $usersNull = User::whereNULL('email_verified_at')->get()->count();
         $usersVerifiedCount = User::whereNOTNULL('email_verified_at')->count();
         $allUsers = User::count();
         $usersNotVerifiedCount = User::whereNULL('email_verified_at')->count();

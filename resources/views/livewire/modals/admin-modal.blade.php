@@ -5,9 +5,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title title1" id="exampleModalLabel">Adding new role</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
             </div>
             <form wire:submit.prevent="addRoles">
             <div class="modal-body">
@@ -33,9 +31,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title title2" id="exampleModalLabel">Update Role</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
             </div>
             <form wire:submit.prevent="updateRoles">
             <div class="modal-body">
@@ -62,9 +58,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title title3" id="exampleModalLabel">Are you sure you want to delete this role?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
             </div>
            
             <div class="modal-footer">
@@ -79,9 +73,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title title1" id="exampleModalLabel">Add Permissions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
                 </div>
                 <form wire:submit.prevent="addPermissions">
                 <div class="modal-body">
@@ -108,9 +100,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title title2" id="exampleModalLabel">Edit Permissions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
                 </div>
                 <form wire:submit.prevent="addPermissions">
                 <div class="modal-body">
@@ -137,9 +127,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel" style="font-size: 18px;">Are you sure you want to delete this permissions?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
             </div>
            
             <div class="modal-footer">
@@ -155,9 +143,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title title2" id="exampleModalLabel">Edit Users</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
                 </div>
                 <form wire:submit.prevent="updateUsers">
                 <div class="modal-body">
@@ -198,9 +184,7 @@
             <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this user?</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
             </div>
            
             <div class="modal-footer">

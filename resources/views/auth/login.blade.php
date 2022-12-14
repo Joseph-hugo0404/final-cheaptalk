@@ -1,4 +1,4 @@
-@extends('base')
+@extends('main2')
 
 @section('content')
 
@@ -13,9 +13,9 @@
         <div id="messagee" class="alert alert-danger text-center">{{ session('error') }}</div>
         @endif
         <div class="card shadow mb-5 rounded border border-light mt-5">
-            <div class="card-body rounded" style="background-color: red
+            <div class="card-body rounded" style="background-color: #082032
             " id="card-bodyy">
-                <h2 class="text-center mb-4" style="color:white; font-size: 25px;">LOG IN</h2>
+                <h2 class="text-center mb-4" style="color: #FF4C29; font-size: 25px;">LOG IN</h2>
                 <form action="{{ '/' }}" method="POST">
                     {{ csrf_field() }}
 
@@ -42,7 +42,7 @@
                         <div class="flex-grow-1">
                             <a href="{{ '/register' }}" class="text-white">Sign up for an account</a>
                         </div>
-                        <button class="btn btn-light px-5" type="submit"><span class="fas fa-sign-out"></span> Login</button>
+                        <button class="btn px-5" type="submit" style="background-color: #FF4C29"><span class="fa-solid fa-right-from-bracket fa-fw me-3"></span> Login</button>
                     </div>
                     </form>
             </div>
@@ -54,7 +54,7 @@
    
 </div>
 
-<div class="box">
+{{-- <div class="box">
     <ul>
         <li></li>
         <li></li>
@@ -64,7 +64,7 @@
         <li></li>
         <li></li>
     </ul>
-</div>
+</div> --}}
 
 @endsection
 
@@ -74,7 +74,7 @@
     text-align: center;
 }
 
-.box ul li {
+/* .box ul li {
 	position: absolute;
 	width: 35px;
 	height: 35px;
@@ -84,8 +84,8 @@
 	bottom: 0;
 	left: 10vw;
 	animation: animate 15s linear infinite;
-}
-.box ul li:nth-child(2) {
+} */
+/* .box ul li:nth-child(2) {
 	left: 30vw;
 	animation-delay: 4s;
 }
@@ -108,8 +108,8 @@
 .box ul li:nth-child(7) {
 	left: 80vw;
 	animation-delay: 13s;
-}
-@keyframes animate {
+} */
+/* @keyframes animate {
 	0% {
 		transform: scale(0);
 		opacity: 1;
@@ -120,7 +120,7 @@
 		opacity: 0;
 		bottom: 100vh;
 	}
-}
+} */
 </style>
 
 <script>

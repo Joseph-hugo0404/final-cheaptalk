@@ -7,7 +7,7 @@
         <hr>
         <div class="post-body">
                     <button class="write-2" style="color:white;background-color: rgb(12, 0, 43);" data-toggle="modal" data-target="#click">Create new post</button>
-            
+               
             
             <div class="card-deck offset-2">
                 @foreach ($posts as $post)
@@ -15,12 +15,6 @@
                     <div class="card mt-2 mr-4">
                         <div class="col-md-12 mt-4 mr-4 {{ ($post->user->gender === 'Female')? 'female': 'male'}}">
                             <div class="card-body">
-                                @if($post->isEditable())
-                            <a href="" class="btn btn-primary"  id="ic" title="Edit" data-toggle="modal" data-target="#click-edit" wire:click="editPosts({{ $post->id }})"><i class=" fa fa-edit"></i></a>
-                            <a href="" class="btn btn-danger" style="margin-right: 20%" id="ic" title="Delete" data-toggle="modal" data-target="#click-delete" wire:click="delete({{ $post->id }})"><i class=" fa fa-trash"></i></a>
-                       
-
-                        @endif
                                 <div class="card-title">
                                     <h4 id="post-title">[{{ $post->title }}] <hr> <a href="{{url('authors', ['id'=>$post->user->id])}}"><span><h6 id="username"><span>@</span>{{ $post->user->email }}</h6></span></a></h4>
                                     <p class="timestamp">
@@ -242,3 +236,23 @@
     });
 
 </script>
+
+
+
+
+
+
+
+
+
+
+<div class="card-header">
+                        @if($post->isEditable())
+                        <span id="dot-icon" class="float-end dropdown dropstart bg-danger">
+                            <span class="fa-solid fa-edit text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false"></span>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" data-toggle="modal" data-target="#click-delete" wire:click="delete({{ $post->id }})">Delete</a></li>
+                                <li><a class="dropdown-item" data-toggle="modal" data-target="#click-edit" wire:click="editPosts({{ $post->id }})">Edit</a></li>
+                            </ul>
+                        </span>
+                        @endif

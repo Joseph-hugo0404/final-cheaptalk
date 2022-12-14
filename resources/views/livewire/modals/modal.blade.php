@@ -1,13 +1,11 @@
 <div>
     {{-- Modal post Features --}}
 <div wire.ignore.self class="modal fade" id="click" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-md" role="document">
       <div class="modal-content " id="modall">
         <div class="modal-header text-start">
             <h5 class="modal-title title1 text-secondary" id="exampleModalLabel">Creating post...</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
         </div>
         <select name="title" class="form-select" wire:model.defer="title">
             <option hidden="true">Select Categories</option>
@@ -34,13 +32,11 @@
 </div>
 {{-- delete post --}}
 <div wire:ignore.self class="modal fade" id="click-delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-md" role="document">
         <div class="modal-content" id="modall">
         <div class="modal-header">
             <h5 class="modal-title title3 text-secondary" id="exampleModalLabel">Are you sure you want to delete this post?</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
         </div>
        
         <div class="modal-footer">
@@ -52,13 +48,11 @@
 
 {{-- Modal edit feature --}}
 <div wire:ignore.self class="modal fade" id="click-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-dialog modal-md" role="document">
         <div class="modal-content" id="modall">
         <div class="modal-header">
             <h5 class="modal-title title2 text-secondary" id="exampleModalLabel">Editing post...</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
         </div>
         <select name="title" class="form-select" wire:model.defer="title">
             <option hidden="true">Select Categories</option>

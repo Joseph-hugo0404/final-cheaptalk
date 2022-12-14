@@ -1,6 +1,4 @@
-@extends('base')
-
-@extends('navbar')
+@extends('main')
 
 @section('title', 'Recent Posts')
 

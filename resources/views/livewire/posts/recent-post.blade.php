@@ -2,6 +2,7 @@
     @include('livewire.modals.modal')
     <div class="profile">
         <h2 class="mt-3" style="font-weight: 400; font-size: 30px;">Recent Posts</h2>
+        <hr>
     </div>
     <div class="post-body">
     
@@ -23,40 +24,7 @@
             <div class="col p-3 shadow-sm rounded mb-5" id="write">
                 <input type="text" class="write-2 form-control" placeholder="Search" wire:model.lazy="search">
             </div>
-        
-            <div class="col-md-12  offset-8">
-                @if (session('message'))
-                    <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
-                @endif
-            @foreach ($recents as $recent)
-            <div class="card mt-3 {{ $recent->user->gender === 'Female' ? 'f1' : 'm1' }}" style="width: 900px">
-                <div class="card-header">
-                    <span class="float-end" id="titlee">
-                        <span class="float-end" id="titleee">{{ $recent->title }}</span>
-                        </span>
-                      
-                        <div>
-                        <span class="time" style="position:relative; top: 10px; left: -50px;">{{ $recent->created_at->format('g:i A') }}</span>
-                    </div>
-                </div>
-              
-                <div class="card-footer">
-            
-                    <div class="float-center d-flex justify-content-center">
-                    <img class="card" style="border-radius: 50%; width: 80px;" id="pf1"
-                    src="{{ $recent->user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
-                    alt="photo">
-              
-                    </div>
-                    <p class="text-center">{{ $recent->user->name }}</p>
-                    
-                </div>
-                <div class="card-body bg-secondary">
-                    <div class="contentt"><span class="text-light">{{ $recent->content }}</span></div>
-                </div>
-            </div>
-            @endforeach
-        </div>
+
     </div>
     @if($recents->isEmpty())
         <div class="text-gray-500">
@@ -64,6 +32,31 @@
         </div>
     @endif
     <button onclick="topFunction()" id="myBtn" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<div class="card-deck offset-2">
+    @foreach ($recents as $recent)
+    <div class="card-deck">
+        <div class="card mt-2 mr-4">
+            <div class="col-md-12 mt-4 mr-4 {{ ($recent->user->gender === 'Female')? 'female': 'male'}}">
+                <div class="card-body">
+                    <div class="card-title">
+                        <h4 id="post-title">[{{ $recent->title }}] <hr> <a href="{{url('authors', ['id'=>$recent->user->id])}}"><span><h6 id="username"><span>@</span>{{ $recent->user->email }}</h6></span></a></h4>
+                        <p class="timestamp">
+                    {{ $recent->created_at->format('F d, Y g:i A') }}</p> <br>
+                    <img class="card" style="border-radius: 50%; width: 80px; margin-left: 35%;" id="pf1"
+                        src="{{ $recent->user->gender === 'Male' ? asset('images/man.png') : asset('images/woman.png') }}" 
+                        alt="photo">
+                        <p class="text-center" style="font-weight: bold">[{{ $recent->user->name }}]</p>
+                    <div class="card-body bg-secondary" style="border-radius: 5px">
+                        <div class="content"><span class="text-light text-control">{{ $recent->content }}</span></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        @endforeach
 </div>
 
 <style>
@@ -111,7 +104,7 @@
         margin-top: 5px;
     }
     #genderr {
-        color: rgb(21, 21, 103);
+        color: rgb(61, 228, 203);
         font-weight: bold;
         font-style: italic;
         font-size: 13px;
@@ -153,12 +146,12 @@
         background-color: rgba(89, 88, 88, 0.593);
     }
     .male {
-        background-color: rgb(5, 5, 147);
+        background-color: rgb(109, 239, 253);
         padding: 3px;
         border-radius: 3px;
     }
     .female {
-        background-color: rgb(243, 27, 239);
+        background-color: rgb(242, 98, 165);
         padding: 3px;
         border-radius: 3px;
     }
@@ -204,6 +197,68 @@
         height: 40px;
         border-radius: 50%;
     }
+
+    #top{
+       
+       font-size: 50px;
+   }
+
+
+   #post-title{
+       /* font-family: 'Raleway', sans-serif; */
+       font-weight: bold;
+   }
+   
+   p{
+       /* font-family: 'Raleway', sans-serif; */
+       font-weight: bold;
+   }
+   .timestamp{
+       font-size: 12px;
+   }
+
+   .card-body{
+       /* background-color: #33475687; */
+       /* color: #1A1B41; */
+   }
+   
+   #username{
+       text-decoration: none;
+       color: #00ffb3;
+   }
+
+   .buttons-for-non-user{
+       color: white;
+   }
+   .buttons-for-user{
+       color: black;
+   }
+   #post-box{
+       border-radius: 10px;
+       
+   }
+
+   .card-footer-recent{
+       border-bottom-left-radius: 10px; 
+       border-bottom-right-radius: 10px; 
+   }
+
+   
+   a{
+       /* color: #BAFF29; */
+       margin-right: 8px;
+   }
+   
+   .female2{
+       background-color: hotpink;
+   }
+   .male2{
+       background-color: dodgerblue;
+   }
+
+   ::-webkit-scrollbar {
+       display: none;
+   }
 </style>
 
 

@@ -1,71 +1,140 @@
-@extends('base')
-
-@extends('navbar')
+@extends('main')
 
 @section('title', 'Dashboard')
 
 @section('content')
     <div class="container ">
-        <h1 class="text-center" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h1>
+        <h2 class="text-start mt-3" style="font-weight: 400; color:dimgray; font-size: 30px;">Dashboard</h2><hr>
+                <div class="d-flex align-items-end">
+                    <img class="card" style="border-radius: 50%; width: 80px; margin-left: 80%;" id="pf1"
+                                    src="{{ asset('images/man.png') }}" 
+                                    alt="photo">
+                    <div class="ms-3 name">
+                        <h5 class="font-bold">{{ Auth::user()->name }}</h5>
+                        <h6 class="text-muted mb-0">{{ Auth::user()->email }}</h6>
+                    </div>
+                </div>
         <div class="content " style="position: relative; margin-left: 300px;">
+
             <div class="row mt-5 text-center">
-                <div class="col-md-3 mb-2">
-                    <div class="card shadow">
+                <div class="col-xl-3 col-md-4 mb-4">
+                    <div class="small-box text-white" style="background: linear-gradient(to bottom right, #2a05ff, #ff1d74);">
                         <a href="/recent-post" id="dash-link">
-                            <div class="card-body rounded " style="background-color:red">
-                                <div class="row">
-                                    <div class="col">
-                                       
-                                    </div>
-                                    <div class="col mt-4">
-                                        <span class="text-white float-right" id="text">Recent Post</span><br>
-                                        <span class="text-white" id="text2">{{ $allPosts }}</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="inner text-white">
+                            <h3>{{ $allPosts }}</h3>
+            
+                            <p class="text-white">Recent Posts</p>
+                            <span class="text-white float-right" id="text"></span><br>
+                        </div>
+                        <div class="icon ">
+                            <i class="fa-solid fa-signs-post"></i>
+                        </div>
                         </a>
                     </div>
+                          
                 </div>
                 @role('admin')
-                <div class="col-md-3 mb-2">
-                    <div class="card shadow">
+                <div class="col-xl-3 col-md-4 mb-4">
+                    <div class="small-box text-white" style="background: linear-gradient(to bottom right, #180292, #ff1c55);">
                         <a href="/log" id="dash-link">
-                            <div class="card-body rounded" style="background-color:red">
-                                <div class="row">
-                                    <div class="col">
-                                     
-                                    </div>
-                                    <div class="col mt-4">
-                                        <span class="text-white float-right" id="text">Total Logs</span><br>
-                                        <span class="text-white" id="text2">{{ $logs }}</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="inner text-white">
+                            <h3>{{ $logs }}</h3>
+            
+                            <p class="text-white">Activity Logs</p>
+                            <span class="text-white float-right" id="text"></span><br>
+                        </div>
+                        <div class="icon ">
+                            <i class="fa-sharp fa-solid fa-address-card"></i>
+                        </div>
                         </a>
                     </div>
+                          
                 </div>
+
                 @endrole
-                <div class="col-md-3">
-                    <div class="card shadow">
+                <div class="col-xl-3 col-md-4 mb-4">
+                    <div class="small-box text-white" style="background: linear-gradient(to bottom right, #13ffdc, #ec0740);">
                         <a href="/my-post" id="dash-link">
-                            <div class="card-body rounded" style="background-color:red">
-                                <div class="row">
-                                    <div class="col">
-                                        
-                                    </div>
-                                    <div class="col mt-4">
-                                        <span class="text-white float-right" id="text">Your Posts</span><br>
-                                        <span class="text-white" id="text2">{{ $posts }}</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="inner text-white">
+                            <h3>{{ $posts }}</h3>
+            
+                            <p class="text-white">My Posts</p>
+                            <span class="text-white float-right" id="text"></span><br>
+                        </div>
+                        <div class="icon ">
+                            <i class="fa-sharp fa-solid fa-envelope"></i>
+                        </div>
                         </a>
                     </div>
+                          
                 </div>
             </div>
         </div>
         
     </div>
+
+    <div class="col-12 col-lg-3">
+        {{-- user profile modal --}}
+        <div class="card-body">
+            <!--Basic Modal -->
+            <div class="modal fade text-left" id="default" tabindex="-1" aria-labelledby="myModalLabel1" style="display: none;" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="myModalLabel1">User Profile</h5>
+                            <button type="button" class="close rounded-pill" data-bs-dismiss="modal" aria-label="Close">
+                                <i data-feather="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label>Full Name</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control" name="fullName" value="{{ Auth::user()->name }}" readonly>
+                                                <div class="form-control-icon">
+                                                    <i class=""></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group has-icon-left">
+                                            <div class="position-relative">
+                                                <input type="text" class="form-control" name="email" value="{{ Auth::user()->email }}" readonly>
+                                                <div class="form-control-icon">
+                                                    <i class=""></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary ml-1" data-bs-dismiss="modal">
+                                <i class="bx bx-check d-block d-sm-none"></i>
+                                <span class="d-none d-sm-block">Close</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end user profile modal --}}
+
+       
+    </div>
+</section>
+</div>
 @endsection
 
 <style>
