@@ -1,9 +1,10 @@
 @extends('main')
-
+@section('menu')
+@endsection
 @section('title', 'Admin | Permissions')
 
 @section('content')
-    <div class="container">
+    <div id="main">
         <livewire:admin.permissions.index/>
     </div>
 

@@ -1,11 +1,10 @@
 @extends('main')
-
-
-@section('title', 'Admin | Roles')
+@section('menu')
+@endsection
+@section('title', 'Admin | Users')
 
 @section('content')
-    <div class="container">
+<div id="main">
         <livewire:admin.roles.index/>
-    </div>
-
+</div>
 @endsection

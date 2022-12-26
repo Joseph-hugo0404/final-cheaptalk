@@ -3,7 +3,7 @@
 @section('title', 'Recent Posts')
 
 @section('content')
-    <div>
+    <div id="main">
         <livewire:posts.recent-post/>
     </div>
 @endsection

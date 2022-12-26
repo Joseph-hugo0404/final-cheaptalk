@@ -1,4 +1,3 @@
-<div>
     <div class="container mt-2">
         <h1 style="font-size: 25px; font-weight: 400;">Users [{{Auth::user()->name}}]</h1>
         <hr>
@@ -43,26 +42,6 @@
             {{ $users->links() }}
         </div>
     </div>
-</div>
+   
 <style>
-    .close {
-        border-radius: 50%;
-        width: 25px;
-        border: none;
-    }
-    .close span {
-        color: black;
-    }
-    .close:hover {
-        background-color: rgb(214, 211, 211);
-    }
-    .title3 {
-        margin-left: 8%;
-    }
-    .title1 {
-        margin-left: 38%;
-    }
-    .title2 {
-        margin-left: 35%;
-    }
 </style>

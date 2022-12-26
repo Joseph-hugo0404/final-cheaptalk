@@ -4,7 +4,7 @@
 }
 
 body {
-    background: linear-gradient(to bottom, rgb(49, 111, 128), rgb(243, 243, 243));
+    background-color: rgb(255, 255, 255);
 }
 
 .tab-container {

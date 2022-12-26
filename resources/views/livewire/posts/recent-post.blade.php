@@ -5,7 +5,7 @@
         <hr>
     </div>
     <div class="post-body">
-    
+          
         <div class="col-md-4">
             @if (session('message'))
                 <div id="messagee" class="alert text-black text-center text-black">{{ session('message') }}</div>
@@ -224,7 +224,7 @@
    
    #username{
        text-decoration: none;
-       color: #00ffb3;
+       color: #000000;
    }
 
    .buttons-for-non-user{

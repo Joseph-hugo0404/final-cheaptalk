@@ -5,6 +5,7 @@
         @if (session('message'))
             <div class="alert alert-success text-black text-center" id="messagee">{{ session('message') }}</div>
         @endif
+        <hr>
         <div class='btn  btn-sm float-end mb-2' style="background-color: #2c70b1; color:white;" data-toggle="modal" data-target="#modal-permissions">Create New Permission</div>
         <input type="search" class="form-control float-start mx-2 mb-3" style="width: 250px;" placeholder="Search" wire:model.lazy="search">
         <div class="card-body">
@@ -39,24 +40,4 @@
     </div>
 </div>
 <style>
-    .close {
-        border-radius: 50%;
-        width: 25px;
-        border: none;
-    }
-    .close span {
-        color: black;
-    }
-    .close:hover {
-        background-color: rgb(214, 211, 211);
-    }
-    .title3 {
-        margin-left: 8%;
-    }
-    .title1 {
-        margin-left: 38%;
-    }
-    .title2 {
-        margin-left: 35%;
-    }
 </style>

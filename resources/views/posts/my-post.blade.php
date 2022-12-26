@@ -5,7 +5,7 @@
 
 @section('content')
 
-    <div>
+    <div id="main">
         <livewire:posts.my-post/>
     </div>
 

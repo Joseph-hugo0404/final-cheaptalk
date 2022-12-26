@@ -1,4 +1,4 @@
-<div>
+<div id="main">
     <div class="container">
         <h1 style="font-family: Comic Sans MS">Admin Dashboard</h1>
         <div class="content">

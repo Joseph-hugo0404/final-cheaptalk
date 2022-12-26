@@ -52,7 +52,9 @@
         <div class="modal-content" id="modall">
         <div class="modal-header">
             <h5 class="modal-title title2 text-secondary" id="exampleModalLabel">Editing post...</h5>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">x</button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
         </div>
         <select name="title" class="form-select" wire:model.defer="title">
             <option hidden="true">Select Categories</option>

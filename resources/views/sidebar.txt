@@ -1,0 +1,107 @@
+<ul class="navbar-nav bg-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+  <!-- Sidebar - Brand -->
+  <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{url('/dashboard')}}">
+      
+      <div class="sidebar-brand-text mx-3">FINAL&#xB7;PROJECT</div>
+  </a>
+
+  <!-- Divider -->
+  <hr class="sidebar-divider my-0">
+
+  <!-- Nav Item - Dashboard -->
+  <li class="nav-item">
+          <a class="nav-link {{ 'dashboard' == request()->path() ? 'active' : '' }}"
+            href="{{ '/dashboard' }}"
+          aria-current="true"
+        >
+          <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Dashboard</span>
+        </a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link {{ 'recent-post' == request()->path() ? 'active' : '' }}"
+      href="{{ '/recent-post' }}"
+    aria-current="true"
+  >
+    <i class="fas fa-envelope fa-fw me-3"></i><span>Posts</span>
+  </a>
+</li>
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+          
+      </div>
+
+      <!-- Divider -->
+      <hr>
+      <li class="nav-item">
+        <div class="card-body">
+            <div class="badges">
+                @role('admin')
+                <span class="text-white">Role Name:</span>
+                <span class="badge bg-light text-dark">Admin</span>
+                @endrole
+                @if (Auth::user()->role=='User')
+                    <span>Name: <span class="fw-bolder">{{ Auth::user()->name }}</span></span>
+                    <hr>
+                    <span>Role Name:</span>
+                    <span class="badge bg-info">User</span>
+                @endif
+            </div>
+        </div>
+    </li>
+
+           @role('admin')
+           <li class="nav-item">
+           <a class="nav-link {{ 'admin/users' == request()->path() ? 'active' : '' }}"
+              href="{{ route('admin.users.index') }}"> <i class="fa-solid fa-users fa-fw me-3"></i><span>Users</span></a>
+           </li>
+
+           <li class="nav-item">
+              <a class="nav-link {{ 'my-post' == request()->path() ? 'active' : '' }}"
+                  href='/my-post'> <i class="fa-solid fa-envelope fa-fw me-3"></i><span>My Posts</span></a>
+           </li>
+
+           <li class="nav-item">
+                  <a class="nav-link {{ '/log' == request()->path() ? 'active' : '' }}"
+                      href="{{ '/log' }}"><i class="fa-sharp fa-solid fa-address-card fa-fw me-3"></i><span>Logs</span></a>
+           </li>
+
+           <li class="nav-item">
+                      <a class="nav-link {{ 'admin/roles' == request()->path() ? 'active' : '' }}"
+                          href="{{ route('admin.roles.index') }}"> <i class="fa-duotone fa-book fa-fw me-3"></i><span>Roles</span></a>
+           </li>
+
+                          <li class="nav-item">
+
+                          <a class="nav-link {{ 'admin/permissions' == request()->path() ? 'active' : '' }}"
+                              href="{{ route('admin.permissions.index') }}"> <i class="fa-solid fa-list fa-fw me-3"></i><span>Permissions</span></a>
+                          </li>
+             
+   @endrole
+
+   <li class="nav-item">
+    <a class="nav-link"
+         href="{{ '/logout' }}"> <i class="fa-solid fa-right-from-bracket fa-fw me-3"></i><span>Sign Out</span></a>
+   </li>
+
+      @guest
+      @if (Route::has('login'))
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+          </li>
+      @endif
+      @if (Route::has('register'))
+          <li class="nav-item">
+              <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+          </li>
+      @endif
+  @endguest
+      
+  <!-- Sidebar Toggler (Sidebar) -->
+  <div class="text-center d-none d-md-inline ">
+      <button class="rounded-circle border-0" id="sidebarToggle" data-toggle="tooltip" data-placement="top" title="click">
+      </button>
+  </div>
+</ul>

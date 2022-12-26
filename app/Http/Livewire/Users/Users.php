@@ -11,6 +11,7 @@ class Users extends Component
     {
         $users = User::whereNOTNULL('email_verified_at')->get();
         $usersNull = User::whereNULL('email_verified_at')->get()->count();
+        $users = User::count();
         $usersVerifiedCount = User::whereNOTNULL('email_verified_at')->count();
         $allUsers = User::count();
         $usersNotVerifiedCount = User::whereNULL('email_verified_at')->count();
