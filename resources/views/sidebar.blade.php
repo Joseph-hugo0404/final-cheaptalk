@@ -38,13 +38,6 @@
                   </div>
               </li>
 
-              {{-- <li class="sidebar-item">
-                  <a href="{{ route('change/password') }}" class='sidebar-link'>
-                      <i class="bi bi-shield-lock"></i>
-                      <span>Chnage Password</span>
-                  </a>
-              </li> --}}
-
               @role('admin')
                   <li class="sidebar-title">Controller</li>
                   <li class="sidebar-item  has-sub">
@@ -94,8 +87,10 @@
                               href="{{ '/recent-post' }}"
                             aria-current="true"
                           >
-                            <i class="fas fa-envelope fa-fw me-3"></i><span>Posts</span>
+                            <i class=""></i><span>Posts</span>
                           </a>
+                          <a class="nav-link {{ 'my-post' == request()->path() ? 'active' : '' }}" 
+                            href="{{ '/my-post'}}"></span> My Posts</a>
                       </li>
                   </ul>
               </li>
